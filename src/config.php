@@ -2,17 +2,21 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 // Debug information
+$env_path = __DIR__ . '/.env';
 error_log("Current directory: " . __DIR__);
-error_log("Looking for .env file at: " . __DIR__ . '/.env');
-error_log("File exists: " . (file_exists(__DIR__ . '/.env') ? 'yes' : 'no'));
-error_log("File readable: " . (is_readable(__DIR__ . '/.env') ? 'yes' : 'no'));
-error_log("File permissions: " . substr(sprintf('%o', fileperms(__DIR__ . '/.env')), -4));
+error_log("Looking for .env file at: " . $env_path);
+error_log("File exists: " . (file_exists($env_path) ? 'yes' : 'no'));
+error_log("File readable: " . (is_readable($env_path) ? 'yes' : 'no'));
+error_log("File permissions: " . substr(sprintf('%o', fileperms($env_path)), -4));
 error_log("Current user: " . get_current_user());
 error_log("Process user: " . posix_getpwuid(posix_geteuid())['name']);
+error_log("PHP process user: " . exec('whoami'));
+error_log("PHP process group: " . exec('groups'));
+error_log("Web server user: " . exec('ps aux | grep httpd | grep -v grep | awk \'{print $1}\''));
 
 // Load environment variables from .env file
 try {
-    $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__, '.env', false);
     $dotenv->load();
 } catch (Exception $e) {
     error_log("Dotenv error: " . $e->getMessage());

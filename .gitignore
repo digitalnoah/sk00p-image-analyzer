@@ -6,3 +6,4 @@ composer.phar
 .DS_Store
 logs/php-error.log
 /logs
+*.log

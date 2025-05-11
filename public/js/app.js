@@ -68,7 +68,7 @@ async function uploadToServer(file) {
 	formData.append("image", file);
 
 	try {
-		const response = await fetch("../src/upload.php", {
+		const response = await fetch("ajax/upload.php", {
 			method: "POST",
 			body: formData,
 		});
@@ -105,7 +105,7 @@ async function analyzeImage() {
 		}
 
 		// Now request analysis
-		const response = await fetch("../src/analyze.php", {
+		const response = await fetch("ajax/analyze.php", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

@@ -1,9 +1,23 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 
+// Debug information
+error_log("Current directory: " . __DIR__);
+error_log("Looking for .env file at: " . __DIR__ . '/.env');
+error_log("File exists: " . (file_exists(__DIR__ . '/.env') ? 'yes' : 'no'));
+error_log("File readable: " . (is_readable(__DIR__ . '/.env') ? 'yes' : 'no'));
+error_log("File permissions: " . substr(sprintf('%o', fileperms(__DIR__ . '/.env')), -4));
+error_log("Current user: " . get_current_user());
+error_log("Process user: " . posix_getpwuid(posix_geteuid())['name']);
+
 // Load environment variables from .env file
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+try {
+    $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
+    $dotenv->load();
+} catch (Exception $e) {
+    error_log("Dotenv error: " . $e->getMessage());
+    throw $e;
+}
 
 // Define configuration based on environment
 $environment = $_ENV['ENVIRONMENT'] ?? 'production';

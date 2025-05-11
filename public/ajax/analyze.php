@@ -1,6 +1,12 @@
 <?php
+// Enable error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('log_errors', 1);
+ini_set('error_log', __DIR__ . '/../../logs/php-error.log');
+
 // src/analyze.php
-require_once 'config.php';
+require_once __DIR__ . '/../../config.php';
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $conn = new mysqli(DB_CONFIG['host'], DB_CONFIG['username'], DB_CONFIG['password'], DB_CONFIG['database']);

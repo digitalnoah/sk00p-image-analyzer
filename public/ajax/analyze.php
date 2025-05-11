@@ -7,7 +7,7 @@ ini_set('error_log', __DIR__ . '/../../logs/php-error.log');
 
 // src/analyze.php
 require_once __DIR__ . '/../../src/config.php';
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 $conn = new mysqli(DB_CONFIG['host'], DB_CONFIG['username'], DB_CONFIG['password'], DB_CONFIG['database']);
 if ($conn->connect_error) {

@@ -7,7 +7,7 @@ ini_set('error_log', __DIR__ . '/../../logs/php-error.log');
 
 // src/upload.php
 require_once __DIR__ . '/../../src/config.php';
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 use Aws\S3\S3Client;
 use Aws\Exception\AwsException;

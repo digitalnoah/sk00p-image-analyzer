@@ -3,11 +3,23 @@ let currentStep = 1;
 let uploadedImage = null;
 let currentImageData = null;
 
+// Animation variables
+let animationTimer = null;
+let dotCount = 0;
+let countdownValue = 15;
+let countdownTimer = null;
+
 // Function to navigate between steps
 function goToStep(step) {
 	document.querySelectorAll(".step").forEach((s) => s.classList.remove("active"));
 	document.getElementById(`step${step}`).classList.add("active");
 	currentStep = step;
+
+	// Reset image data when returning to step 1
+	if (step === 1) {
+		currentImageData = null;
+		uploadedImage = null;
+	}
 }
 
 // Handle image upload
@@ -16,7 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	document.getElementById("imageUpload").addEventListener("change", function (e) {
 		const file = e.target.files[0];
 		if (file) {
+			// Reset image data for the new upload
 			uploadedImage = file;
+			currentImageData = null;
 			const reader = new FileReader();
 			reader.onload = function (e) {
 				// Update the image src instead of background-image
@@ -56,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			} else if (action === "analyze") {
 				document.getElementById("step3").classList.add("analyzing");
 				goToStep(3);
+				startAnalysisAnimation();
 				analyzeImage();
 			}
 		});
@@ -87,7 +102,8 @@ async function analyzeImage() {
 	}
 
 	// Show loading state
-	document.getElementById("imageDescription").textContent = "Analyzing image...";
+	document.getElementById("imageDescription").textContent = "Analyzing image";
+	document.getElementById("countdown").textContent = "15";
 	document.getElementById("imageTags").innerHTML = "";
 
 	try {
@@ -166,5 +182,39 @@ async function analyzeImage() {
 		document.getElementById("imageDescription").textContent = "Error: " + error.message;
 	} finally {
 		document.getElementById("step3").classList.remove("analyzing");
+		stopAnalysisAnimation();
 	}
+}
+
+// Function to start analysis animation
+function startAnalysisAnimation() {
+	// Reset countdown
+	countdownValue = 15;
+	document.getElementById("countdown").textContent = countdownValue.toString();
+	document.getElementById("countdown-container").style.display = "flex";
+
+	// Start dot animation
+	animationTimer = setInterval(() => {
+		dotCount = (dotCount % 3) + 1;
+		let dots = ".".repeat(dotCount);
+		document.getElementById("loading-dots").textContent = dots;
+	}, 500);
+
+	// Start countdown
+	countdownTimer = setInterval(() => {
+		countdownValue--;
+		if (countdownValue <= 0) {
+			clearInterval(countdownTimer);
+			countdownValue = 0;
+		}
+		document.getElementById("countdown").textContent = countdownValue.toString();
+	}, 1000);
+}
+
+// Function to stop analysis animation
+function stopAnalysisAnimation() {
+	clearInterval(animationTimer);
+	clearInterval(countdownTimer);
+	document.getElementById("countdown-container").style.display = "none";
+	document.getElementById("loading-dots").textContent = "";
 }

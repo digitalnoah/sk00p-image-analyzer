@@ -89,7 +89,15 @@
 							</div>
 							<div class="p-4">
 								<p class="section-title">Description</p>
-								<p id="imageDescription" class="description-text">Loading description...</p>
+								<div class="flex items-center">
+									<p id="imageDescription" class="description-text">Loading description</p>
+									<span id="loading-dots" class="description-text"></span>
+								</div>
+								<div id="countdown-container" class="mt-2 text-sm text-gray-500 flex items-center" style="display: none">
+									<span>Estimated time remaining: </span>
+									<span id="countdown" class="font-bold ml-1">15</span>
+									<span class="ml-1">seconds</span>
+								</div>
 							</div>
 							<div class="p-4">
 								<p class="section-title">Tags</p>

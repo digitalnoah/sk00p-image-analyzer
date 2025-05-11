@@ -140,3 +140,28 @@ body {
 	font-weight: 500;
 	line-height: normal;
 }
+
+/* Add new styles below */
+
+/* Loading animation styles */
+#loading-dots {
+	display: inline-block;
+	min-width: 30px;
+	text-align: left;
+	color: #fb2091;
+	font-weight: bold;
+	font-size: 1.5rem;
+	line-height: 1;
+	margin-left: 4px;
+}
+
+#countdown-container {
+	background-color: #f8f9fa;
+	border-radius: 8px;
+	padding: 8px 12px;
+	width: fit-content;
+}
+
+#countdown {
+	color: #fb2091;
+}

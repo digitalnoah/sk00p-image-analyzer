@@ -13,11 +13,14 @@ if (file_exists('/home/ec2-user/tools/vendor/autoload.php')) {
     }
 } else {
     // Local development path
-    $parentDir = dirname(dirname(__DIR__));  // This gives us /Applications/MAMP/htdocs/ai-projects-sk00p
-    require_once $parentDir . '/sk00p-root-tools/vendor/autoload.php';
+    $projectDir = __DIR__; // Current directory of this file
+    $parentDir = dirname($projectDir); // sk00p-image-analyzer
+    $rootDir = dirname($parentDir); // ai-projects-sk00p
+
+    require_once $rootDir . '/sk00p-root-tools/vendor/autoload.php';
 
     // Load environment variables
-    $dotenv = Dotenv\Dotenv::createImmutable($parentDir . '/sk00p-root-tools');
+    $dotenv = Dotenv\Dotenv::createImmutable($rootDir . '/sk00p-root-tools');
     $dotenv->load();
 }
 

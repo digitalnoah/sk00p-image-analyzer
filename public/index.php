@@ -61,9 +61,12 @@ use Sk00p\UI;
                             <button data-action="goToStep" data-step="1" class="button button-secondary">
                                 <span class="truncate">Upload Different Image</span>
                             </button>
-                            <button data-action="analyze" class="button button-primary">
-                                <span class="truncate">Analyze This Image</span>
-                            </button>
+                            <div class="flex flex-col items-center gap-1">
+                                <button data-action="analyze" class="button button-primary">
+                                    <span class="truncate">Analyze This Image</span>
+                                </button>
+                                <span class="text-xs text-gray-500">Cost: 1 credit</span>
+                            </div>
                         </div>
                     </div>
 

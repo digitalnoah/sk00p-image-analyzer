@@ -177,6 +177,14 @@ async function analyzeImage() {
 				tagsContainer.appendChild(tagContainer);
 			}
 		}
+
+		// Update header credits if balance provided
+		if (result.balance !== undefined) {
+			const creditEl = document.getElementById("header-credits");
+			if (creditEl) {
+				creditEl.innerHTML = `Credits: <strong>${result.balance}</strong>`;
+			}
+		}
 	} catch (error) {
 		console.error("Analysis error:", error);
 		document.getElementById("imageDescription").textContent = "Error: " + error.message;

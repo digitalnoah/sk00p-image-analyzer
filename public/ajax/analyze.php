@@ -112,10 +112,12 @@ try {
     }
     $stmt->close();
 
-    // Return the analysis to the frontend
+    // Return the analysis to the frontend with new balance
+    $newBalance = Sk00p\Credits::balance($currentUser->id);
     echo json_encode([
         'success'  => true,
-        'analysis' => $analysis_json
+        'analysis' => $analysis_json,
+        'balance'  => $newBalance
     ]);
 
 } catch (Exception $e) {

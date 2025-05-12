@@ -8,6 +8,7 @@ ini_set('error_log', __DIR__ . '/../../logs/php-error.log');
 // src/upload.php
 require_once __DIR__ . '/../../src/config.php';
 require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../../sk00p-root-tools/autoload.php';
 
 use Aws\S3\S3Client;
 use Aws\Exception\AwsException;
@@ -65,3 +66,11 @@ if ($_FILES['image']['error'] === UPLOAD_ERR_OK) {
 }
 
 $conn->close();
+
+Sk00p\Session::start();
+$currentUser = Sk00p\User::current();
+if (!$currentUser) {
+    http_response_code(401);
+    echo json_encode(['error' => 'Please login first']);
+    exit;
+}

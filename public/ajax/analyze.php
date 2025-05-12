@@ -8,6 +8,7 @@ ini_set('error_log', __DIR__ . '/../../logs/php-error.log');
 // src/analyze.php
 require_once __DIR__ . '/../../src/config.php';
 require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../../sk00p-root-tools/autoload.php';
 
 $conn = new mysqli(DB_CONFIG['host'], DB_CONFIG['username'], DB_CONFIG['password'], DB_CONFIG['database']);
 if ($conn->connect_error) {
@@ -26,6 +27,20 @@ if (!$image_id || !$image_url) {
 
 // Call OpenAI Vision API
 $client = new \GuzzleHttp\Client();
+
+Sk00p\Session::start();
+$currentUser = Sk00p\User::current();
+if (!$currentUser) {
+    http_response_code(401);
+    echo json_encode(['error' => 'Please login first']);
+    exit;
+}
+// Cost: 1 credit per analysis
+if (!Sk00p\Credits::debitForRun($currentUser->id, 1)) {
+    http_response_code(402);
+    echo json_encode(['error' => 'Insufficient credits']);
+    exit;
+}
 
 try {
     $response = $client->post('https://api.openai.com/v1/chat/completions', [

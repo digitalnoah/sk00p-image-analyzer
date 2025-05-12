@@ -6,10 +6,11 @@ ini_set('log_errors', 1);
 ini_set('error_log', __DIR__ . '/../../logs/php-error.log');
 
 // src/upload.php
-require_once __DIR__ . '/../../src/config.php';
-require_once __DIR__ . '/../../vendor/autoload.php';
 $projectRoot = __DIR__ . '/../../'; // move from public/ajax to project root
 require_once $projectRoot . 'require_tools.php';
+
+require_once __DIR__ . '/../../src/config.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 use Aws\S3\S3Client;
 use Aws\Exception\AwsException;

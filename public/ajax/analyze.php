@@ -37,7 +37,7 @@ if (!$currentUser) {
     exit;
 }
 // Cost: 1 credit per analysis
-if (!Sk00p\Credits::debitForRun($currentUser->id, 1)) {
+if (!Sk00p\Credits::debitForRun($currentUser->id, 1, 'image-analyzer')) {
     http_response_code(402);
     echo json_encode(['error' => 'Insufficient credits']);
     exit;

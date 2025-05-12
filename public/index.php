@@ -1,7 +1,7 @@
 <?php
 // Shared infrastructure bootstrapping for image-analyzer
-require_once __DIR__ . '/../../sk00p-root-tools/autoload.php';
-Sk00p\Session::start();
+$projectRoot = __DIR__ . '/../';
+require_once $projectRoot . 'require_tools.php';
 
 // Optionally you can expose user data to the front-end later here.
 

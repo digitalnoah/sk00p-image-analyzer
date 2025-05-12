@@ -1,37 +1,25 @@
 <?php
-// Shared toolbox for image analyzer - production & local compatible
+// Shared toolbox for image analyzer
 
-// Try to resolve the path dynamically based on current directory
-$possiblePaths = [
-    // Local development paths
-    '/Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-root-tools',
-    dirname(__DIR__) . '/sk00p-root-tools',
-    dirname(dirname(__DIR__)) . '/sk00p-root-tools',
-    // Production paths
-    '/home/ec2-user/sk00p-root-tools',
-    '/home/ec2-user/tools'
-];
+// Check if we're in production (EC2)
+if (file_exists('/home/ec2-user/tools/vendor/autoload.php')) {
+    // Production path
+    require_once '/home/ec2-user/tools/vendor/autoload.php';
 
-// Find the first existing tools path
-$toolsPath = null;
-foreach ($possiblePaths as $path) {
-    if (file_exists($path . '/vendor/autoload.php')) {
-        $toolsPath = $path;
-        break;
+    // Load environment variables if Dotenv exists
+    if (class_exists('Dotenv\Dotenv')) {
+        $dotenv = Dotenv\Dotenv::createImmutable('/home/ec2-user/tools');
+        $dotenv->load();
     }
+} else {
+    // Local development path
+    $parentDir = dirname(dirname(__DIR__));  // This gives us /Applications/MAMP/htdocs/ai-projects-sk00p
+    require_once $parentDir . '/sk00p-root-tools/vendor/autoload.php';
+
+    // Load environment variables
+    $dotenv = Dotenv\Dotenv::createImmutable($parentDir . '/sk00p-root-tools');
+    $dotenv->load();
 }
-
-// If no valid path was found
-if ($toolsPath === null) {
-    die("Could not locate shared tools directory. Please check your installation.");
-}
-
-// Load the autoloader
-require_once $toolsPath . '/vendor/autoload.php';
-
-// Then load environment variables
-$dotenv = Dotenv\Dotenv::createImmutable($toolsPath);
-$dotenv->load();
 
 // Start session if not already started
 if (session_status() === PHP_SESSION_NONE) {

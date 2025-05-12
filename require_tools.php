@@ -1,5 +1,9 @@
 <?php
 // Shared toolbox for image analyzer
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
 
 // Check if we're in production (EC2)
 if (file_exists('/home/ec2-user/tools/vendor/autoload.php')) {
@@ -13,14 +17,27 @@ if (file_exists('/home/ec2-user/tools/vendor/autoload.php')) {
     }
 } else {
     // Local development path
-    $projectDir = __DIR__; // Current directory of this file
-    $parentDir = dirname($projectDir); // sk00p-image-analyzer
-    $rootDir = dirname($parentDir); // ai-projects-sk00p
+    $currentDir = __DIR__; // /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer
 
-    require_once $rootDir . '/sk00p-root-tools/vendor/autoload.php';
+    // For local environment, we see from the debug output that the root directory should be:
+    // /Applications/MAMP/htdocs/ai-projects-sk00p
+    // So we need to get the parent directory of the current directory
+    $rootDir = dirname($currentDir); // /Applications/MAMP/htdocs/ai-projects-sk00p
+
+    $autoloadPath = $rootDir . '/sk00p-root-tools/vendor/autoload.php';
+
+    // If autoloader doesn't exist in expected location, try hardcoded path
+    if (!file_exists($autoloadPath)) {
+        $autoloadPath = '/Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-root-tools/vendor/autoload.php';
+    }
+
+    require_once $autoloadPath;
 
     // Load environment variables
-    $dotenv = Dotenv\Dotenv::createImmutable($rootDir . '/sk00p-root-tools');
+    $envPath = dirname($autoloadPath); // /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-root-tools/vendor
+    $envPath = dirname($envPath); // /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-root-tools
+
+    $dotenv = Dotenv\Dotenv::createImmutable($envPath);
     $dotenv->load();
 }
 

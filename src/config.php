@@ -14,25 +14,24 @@ error_log("PHP process user: " . exec('whoami'));
 error_log("PHP process group: " . exec('groups'));
 error_log("Web server user: " . exec('ps aux | grep httpd | grep -v grep | awk \'{print $1}\''));
 
-// Load environment variables from .env file
-try {
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__, '.env', false);
-    $dotenv->load();
-} catch (Exception $e) {
-    error_log("Dotenv error: " . $e->getMessage());
-    throw $e;
+// Load environment variables from possible .env locations
+$envPaths = [__DIR__ . '/.env', dirname(__DIR__) . '/.env'];
+foreach ($envPaths as $p) {
+    if (file_exists($p)) {
+        Dotenv\Dotenv::createImmutable(dirname($p))->safeLoad();
+    }
 }
 
-// Define configuration based on environment
-$environment = $_ENV['ENVIRONMENT'] ?? 'production';
+// Determine environment
+$environment = $_ENV['ENVIRONMENT'] ?? (($_SERVER['SERVER_NAME'] ?? 'localhost') === 'localhost' ? 'local' : 'production');
 
 // Database configuration
 $db_config = [
     'local'      => [
-        'host'     => $_ENV['DB_HOST'],
-        'database' => $_ENV['DB_NAME'],
-        'username' => $_ENV['DB_USER'],
-        'password' => $_ENV['DB_PASS']
+        'host'     => $_ENV['PROJECT_DB_HOST'] ?? $_ENV['DB_HOST'],
+        'database' => $_ENV['PROJECT_DB_NAME'] ?? $_ENV['DB_NAME'],
+        'username' => $_ENV['PROJECT_DB_USER'] ?? $_ENV['DB_USER'],
+        'password' => $_ENV['PROJECT_DB_PASS'] ?? $_ENV['DB_PASS']
     ],
     'production' => [
         'host'     => $_ENV['PROD_DB_HOST'] ?? 'prod_host',

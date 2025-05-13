@@ -1,0 +1,14 @@
+Update db project table:
+
+ALTER TABLE images ADD COLUMN thumb_url TEXT AFTER s3_url;
+
+Add .env to root folder:
+PROJECT_DB_HOST=localhost
+PROJECT_DB_NAME=imagedb
+PROJECT_DB_USER=root
+PROJECT_DB_PASS=root
+ENVIRONMENT=local
+
+Composer update:
+cd sk00p-root-tools
+composer require intervention/image

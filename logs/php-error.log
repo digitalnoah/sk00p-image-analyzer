@@ -1,0 +1,374 @@
+[13-May-2025 01:55:53 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 01:55:53 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 01:55:53 UTC] File exists: yes
+[13-May-2025 01:55:53 UTC] File readable: yes
+[13-May-2025 01:55:53 UTC] File permissions: 0644
+[13-May-2025 01:55:53 UTC] Current user: noah
+[13-May-2025 01:55:53 UTC] Process user: noah
+[13-May-2025 01:55:54 UTC] PHP process user: noah
+[13-May-2025 01:55:54 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 01:55:54 UTC] Web server user: noah
+[13-May-2025 01:56:17 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 01:56:17 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 01:56:17 UTC] File exists: yes
+[13-May-2025 01:56:17 UTC] File readable: yes
+[13-May-2025 01:56:17 UTC] File permissions: 0644
+[13-May-2025 01:56:17 UTC] Current user: noah
+[13-May-2025 01:56:17 UTC] Process user: noah
+[13-May-2025 01:56:17 UTC] PHP process user: noah
+[13-May-2025 01:56:17 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 01:56:17 UTC] Web server user: noah
+[13-May-2025 01:56:18 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'sk00p_root.images' doesn't exist in /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/public/ajax/upload.php:60
+Stack trace:
+#0 /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/public/ajax/upload.php(60): mysqli->prepare('INSERT INTO ima...')
+#1 {main}
+  thrown in /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/public/ajax/upload.php on line 60
+[13-May-2025 02:04:31 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 02:04:31 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 02:04:31 UTC] File exists: yes
+[13-May-2025 02:04:31 UTC] File readable: yes
+[13-May-2025 02:04:31 UTC] File permissions: 0644
+[13-May-2025 02:04:31 UTC] Current user: noah
+[13-May-2025 02:04:31 UTC] Process user: noah
+[13-May-2025 02:04:31 UTC] PHP process user: noah
+[13-May-2025 02:04:31 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 02:04:31 UTC] Web server user: noah
+[13-May-2025 02:04:33 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'sk00p_root.images' doesn't exist in /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/public/ajax/upload.php:60
+Stack trace:
+#0 /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/public/ajax/upload.php(60): mysqli->prepare('INSERT INTO ima...')
+#1 {main}
+  thrown in /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/public/ajax/upload.php on line 60
+[13-May-2025 02:06:18 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 02:06:18 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 02:06:18 UTC] File exists: yes
+[13-May-2025 02:06:18 UTC] File readable: yes
+[13-May-2025 02:06:18 UTC] File permissions: 0644
+[13-May-2025 02:06:18 UTC] Current user: noah
+[13-May-2025 02:06:18 UTC] Process user: noah
+[13-May-2025 02:06:18 UTC] PHP process user: noah
+[13-May-2025 02:06:18 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 02:06:18 UTC] Web server user: noah
+[13-May-2025 02:06:20 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'sk00p_root.images' doesn't exist in /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/public/ajax/upload.php:60
+Stack trace:
+#0 /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/public/ajax/upload.php(60): mysqli->prepare('INSERT INTO ima...')
+#1 {main}
+  thrown in /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/public/ajax/upload.php on line 60
+[13-May-2025 02:07:39 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 02:07:39 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 02:07:39 UTC] File exists: yes
+[13-May-2025 02:07:39 UTC] File readable: yes
+[13-May-2025 02:07:39 UTC] File permissions: 0644
+[13-May-2025 02:07:39 UTC] Current user: noah
+[13-May-2025 02:07:39 UTC] Process user: noah
+[13-May-2025 02:07:39 UTC] PHP process user: noah
+[13-May-2025 02:07:39 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 02:07:39 UTC] Web server user: noah
+[13-May-2025 02:07:41 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 02:07:41 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 02:07:41 UTC] File exists: yes
+[13-May-2025 02:07:41 UTC] File readable: yes
+[13-May-2025 02:07:41 UTC] File permissions: 0644
+[13-May-2025 02:07:41 UTC] Current user: noah
+[13-May-2025 02:07:41 UTC] Process user: noah
+[13-May-2025 02:07:41 UTC] PHP process user: noah
+[13-May-2025 02:07:41 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 02:07:41 UTC] Web server user: noah
+[13-May-2025 02:08:30 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 02:08:30 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 02:08:30 UTC] File exists: yes
+[13-May-2025 02:08:30 UTC] File readable: yes
+[13-May-2025 02:08:30 UTC] File permissions: 0644
+[13-May-2025 02:08:30 UTC] Current user: noah
+[13-May-2025 02:08:30 UTC] Process user: noah
+[13-May-2025 02:08:30 UTC] PHP process user: noah
+[13-May-2025 02:08:30 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 02:08:30 UTC] Web server user: noah
+[13-May-2025 02:08:32 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 02:08:32 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 02:08:32 UTC] File exists: yes
+[13-May-2025 02:08:32 UTC] File readable: yes
+[13-May-2025 02:08:32 UTC] File permissions: 0644
+[13-May-2025 02:08:32 UTC] Current user: noah
+[13-May-2025 02:08:32 UTC] Process user: noah
+[13-May-2025 02:08:32 UTC] PHP process user: noah
+[13-May-2025 02:08:32 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 02:08:32 UTC] Web server user: noah
+[13-May-2025 02:15:07 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 02:15:07 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 02:15:07 UTC] File exists: yes
+[13-May-2025 02:15:07 UTC] File readable: yes
+[13-May-2025 02:15:07 UTC] File permissions: 0644
+[13-May-2025 02:15:07 UTC] Current user: noah
+[13-May-2025 02:15:07 UTC] Process user: noah
+[13-May-2025 02:15:07 UTC] PHP process user: noah
+[13-May-2025 02:15:07 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 02:15:07 UTC] Web server user: noah
+[13-May-2025 02:15:08 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 02:15:08 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 02:15:08 UTC] File exists: yes
+[13-May-2025 02:15:08 UTC] File readable: yes
+[13-May-2025 02:15:08 UTC] File permissions: 0644
+[13-May-2025 02:15:08 UTC] Current user: noah
+[13-May-2025 02:15:08 UTC] Process user: noah
+[13-May-2025 02:15:08 UTC] PHP process user: noah
+[13-May-2025 02:15:08 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 02:15:08 UTC] Web server user: noah
+[13-May-2025 02:33:14 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 02:33:14 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 02:33:14 UTC] File exists: yes
+[13-May-2025 02:33:14 UTC] File readable: yes
+[13-May-2025 02:33:14 UTC] File permissions: 0644
+[13-May-2025 02:33:14 UTC] Current user: noah
+[13-May-2025 02:33:14 UTC] Process user: noah
+[13-May-2025 02:33:14 UTC] PHP process user: noah
+[13-May-2025 02:33:14 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 02:33:14 UTC] Web server user: noah
+[13-May-2025 02:33:14 UTC] PHP Fatal error:  Uncaught TypeError: Intervention\Image\ImageManager::__construct(): Argument #1 ($driver) must be of type Intervention\Image\Interfaces\DriverInterface|string, array given, called in /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/public/ajax/upload.php on line 53 and defined in /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/vendor/intervention/image/src/ImageManager.php:27
+Stack trace:
+#0 /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/public/ajax/upload.php(53): Intervention\Image\ImageManager->__construct(Array)
+#1 {main}
+  thrown in /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/vendor/intervention/image/src/ImageManager.php on line 27
+[13-May-2025 02:39:55 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 02:39:55 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 02:39:55 UTC] File exists: yes
+[13-May-2025 02:39:55 UTC] File readable: yes
+[13-May-2025 02:39:55 UTC] File permissions: 0644
+[13-May-2025 02:39:55 UTC] Current user: noah
+[13-May-2025 02:39:55 UTC] Process user: noah
+[13-May-2025 02:39:55 UTC] PHP process user: noah
+[13-May-2025 02:39:55 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 02:39:55 UTC] Web server user: noah
+[13-May-2025 02:39:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Intervention\Image\ImageManager::make() in /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/public/ajax/upload.php:57
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/public/ajax/upload.php on line 57
+[13-May-2025 02:41:10 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 02:41:10 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 02:41:10 UTC] File exists: yes
+[13-May-2025 02:41:10 UTC] File readable: yes
+[13-May-2025 02:41:10 UTC] File permissions: 0644
+[13-May-2025 02:41:10 UTC] Current user: noah
+[13-May-2025 02:41:10 UTC] Process user: noah
+[13-May-2025 02:41:10 UTC] PHP process user: noah
+[13-May-2025 02:41:10 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 02:41:10 UTC] Web server user: noah
+[13-May-2025 02:42:20 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 02:42:20 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 02:42:20 UTC] File exists: yes
+[13-May-2025 02:42:20 UTC] File readable: yes
+[13-May-2025 02:42:20 UTC] File permissions: 0644
+[13-May-2025 02:42:20 UTC] Current user: noah
+[13-May-2025 02:42:20 UTC] Process user: noah
+[13-May-2025 02:42:20 UTC] PHP process user: noah
+[13-May-2025 02:42:20 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 02:42:20 UTC] Web server user: noah
+[13-May-2025 02:44:53 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 02:44:53 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 02:44:53 UTC] File exists: yes
+[13-May-2025 02:44:53 UTC] File readable: yes
+[13-May-2025 02:44:53 UTC] File permissions: 0644
+[13-May-2025 02:44:53 UTC] Current user: noah
+[13-May-2025 02:44:53 UTC] Process user: noah
+[13-May-2025 02:44:53 UTC] PHP process user: noah
+[13-May-2025 02:44:53 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 02:44:53 UTC] Web server user: noah
+[13-May-2025 02:44:56 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 02:44:56 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 02:44:56 UTC] File exists: yes
+[13-May-2025 02:44:56 UTC] File readable: yes
+[13-May-2025 02:44:56 UTC] File permissions: 0644
+[13-May-2025 02:44:56 UTC] Current user: noah
+[13-May-2025 02:44:56 UTC] Process user: noah
+[13-May-2025 02:44:56 UTC] PHP process user: noah
+[13-May-2025 02:44:56 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 02:44:56 UTC] Web server user: noah
+[13-May-2025 02:58:02 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 02:58:02 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 02:58:02 UTC] File exists: yes
+[13-May-2025 02:58:02 UTC] File readable: yes
+[13-May-2025 02:58:02 UTC] File permissions: 0644
+[13-May-2025 02:58:02 UTC] Current user: noah
+[13-May-2025 02:58:02 UTC] Process user: noah
+[13-May-2025 02:58:02 UTC] PHP process user: noah
+[13-May-2025 02:58:02 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 02:58:02 UTC] Web server user: noah
+[13-May-2025 02:58:05 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 02:58:05 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 02:58:05 UTC] File exists: yes
+[13-May-2025 02:58:05 UTC] File readable: yes
+[13-May-2025 02:58:05 UTC] File permissions: 0644
+[13-May-2025 02:58:05 UTC] Current user: noah
+[13-May-2025 02:58:05 UTC] Process user: noah
+[13-May-2025 02:58:05 UTC] PHP process user: noah
+[13-May-2025 02:58:05 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 02:58:05 UTC] Web server user: noah
+[13-May-2025 03:00:45 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 03:00:45 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 03:00:45 UTC] File exists: yes
+[13-May-2025 03:00:45 UTC] File readable: yes
+[13-May-2025 03:00:45 UTC] File permissions: 0644
+[13-May-2025 03:00:45 UTC] Current user: noah
+[13-May-2025 03:00:45 UTC] Process user: noah
+[13-May-2025 03:00:45 UTC] PHP process user: noah
+[13-May-2025 03:00:45 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 03:00:45 UTC] Web server user: noah
+[13-May-2025 03:00:48 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 03:00:48 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 03:00:48 UTC] File exists: yes
+[13-May-2025 03:00:48 UTC] File readable: yes
+[13-May-2025 03:00:48 UTC] File permissions: 0644
+[13-May-2025 03:00:48 UTC] Current user: noah
+[13-May-2025 03:00:48 UTC] Process user: noah
+[13-May-2025 03:00:48 UTC] PHP process user: noah
+[13-May-2025 03:00:48 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 03:00:48 UTC] Web server user: noah
+[13-May-2025 03:01:00 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 03:01:00 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 03:01:00 UTC] File exists: yes
+[13-May-2025 03:01:00 UTC] File readable: yes
+[13-May-2025 03:01:00 UTC] File permissions: 0644
+[13-May-2025 03:01:00 UTC] Current user: noah
+[13-May-2025 03:01:00 UTC] Process user: noah
+[13-May-2025 03:01:00 UTC] PHP process user: noah
+[13-May-2025 03:01:00 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 03:01:00 UTC] Web server user: noah
+[13-May-2025 03:01:02 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 03:01:02 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 03:01:02 UTC] File exists: yes
+[13-May-2025 03:01:02 UTC] File readable: yes
+[13-May-2025 03:01:02 UTC] File permissions: 0644
+[13-May-2025 03:01:02 UTC] Current user: noah
+[13-May-2025 03:01:02 UTC] Process user: noah
+[13-May-2025 03:01:02 UTC] PHP process user: noah
+[13-May-2025 03:01:02 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 03:01:02 UTC] Web server user: noah
+[13-May-2025 03:01:04 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 03:01:04 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 03:01:04 UTC] File exists: yes
+[13-May-2025 03:01:04 UTC] File readable: yes
+[13-May-2025 03:01:04 UTC] File permissions: 0644
+[13-May-2025 03:01:04 UTC] Current user: noah
+[13-May-2025 03:01:04 UTC] Process user: noah
+[13-May-2025 03:01:04 UTC] PHP process user: noah
+[13-May-2025 03:01:04 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 03:01:04 UTC] Web server user: noah
+[13-May-2025 03:01:07 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 03:01:07 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 03:01:07 UTC] File exists: yes
+[13-May-2025 03:01:07 UTC] File readable: yes
+[13-May-2025 03:01:07 UTC] File permissions: 0644
+[13-May-2025 03:01:07 UTC] Current user: noah
+[13-May-2025 03:01:07 UTC] Process user: noah
+[13-May-2025 03:01:07 UTC] PHP process user: noah
+[13-May-2025 03:01:07 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 03:01:07 UTC] Web server user: noah
+[13-May-2025 03:05:37 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 03:05:37 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 03:05:37 UTC] File exists: yes
+[13-May-2025 03:05:37 UTC] File readable: yes
+[13-May-2025 03:05:37 UTC] File permissions: 0644
+[13-May-2025 03:05:37 UTC] Current user: noah
+[13-May-2025 03:05:37 UTC] Process user: noah
+[13-May-2025 03:05:37 UTC] PHP process user: noah
+[13-May-2025 03:05:37 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 03:05:37 UTC] Web server user: noah
+[13-May-2025 03:05:40 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 03:05:40 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 03:05:40 UTC] File exists: yes
+[13-May-2025 03:05:40 UTC] File readable: yes
+[13-May-2025 03:05:40 UTC] File permissions: 0644
+[13-May-2025 03:05:40 UTC] Current user: noah
+[13-May-2025 03:05:40 UTC] Process user: noah
+[13-May-2025 03:05:40 UTC] PHP process user: noah
+[13-May-2025 03:05:40 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 03:05:40 UTC] Web server user: noah
+[13-May-2025 03:05:52 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 03:05:52 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 03:05:52 UTC] File exists: yes
+[13-May-2025 03:05:52 UTC] File readable: yes
+[13-May-2025 03:05:52 UTC] File permissions: 0644
+[13-May-2025 03:05:52 UTC] Current user: noah
+[13-May-2025 03:05:52 UTC] Process user: noah
+[13-May-2025 03:05:52 UTC] PHP process user: noah
+[13-May-2025 03:05:52 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 03:05:52 UTC] Web server user: noah
+[13-May-2025 03:05:52 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 03:05:52 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 03:05:52 UTC] File exists: yes
+[13-May-2025 03:05:52 UTC] File readable: yes
+[13-May-2025 03:05:52 UTC] File permissions: 0644
+[13-May-2025 03:05:52 UTC] Current user: noah
+[13-May-2025 03:05:52 UTC] Process user: noah
+[13-May-2025 03:05:52 UTC] PHP process user: noah
+[13-May-2025 03:05:52 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 03:05:52 UTC] Web server user: noah
+[13-May-2025 03:06:53 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 03:06:53 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 03:06:53 UTC] File exists: yes
+[13-May-2025 03:06:53 UTC] File readable: yes
+[13-May-2025 03:06:53 UTC] File permissions: 0644
+[13-May-2025 03:06:53 UTC] Current user: noah
+[13-May-2025 03:06:53 UTC] Process user: noah
+[13-May-2025 03:06:53 UTC] PHP process user: noah
+[13-May-2025 03:06:53 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 03:06:53 UTC] Web server user: noah
+[13-May-2025 03:06:53 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 03:06:53 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 03:06:53 UTC] File exists: yes
+[13-May-2025 03:06:53 UTC] File readable: yes
+[13-May-2025 03:06:53 UTC] File permissions: 0644
+[13-May-2025 03:06:53 UTC] Current user: noah
+[13-May-2025 03:06:53 UTC] Process user: noah
+[13-May-2025 03:06:53 UTC] PHP process user: noah
+[13-May-2025 03:06:53 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 03:06:53 UTC] Web server user: noah
+[13-May-2025 03:06:55 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 03:06:55 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 03:06:55 UTC] File exists: yes
+[13-May-2025 03:06:55 UTC] File readable: yes
+[13-May-2025 03:06:55 UTC] File permissions: 0644
+[13-May-2025 03:06:55 UTC] Current user: noah
+[13-May-2025 03:06:55 UTC] Process user: noah
+[13-May-2025 03:06:55 UTC] PHP process user: noah
+[13-May-2025 03:06:55 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 03:06:55 UTC] Web server user: noah
+[13-May-2025 03:14:02 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 03:14:02 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 03:14:02 UTC] File exists: yes
+[13-May-2025 03:14:02 UTC] File readable: yes
+[13-May-2025 03:14:02 UTC] File permissions: 0644
+[13-May-2025 03:14:02 UTC] Current user: noah
+[13-May-2025 03:14:02 UTC] Process user: noah
+[13-May-2025 03:14:02 UTC] PHP process user: noah
+[13-May-2025 03:14:02 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 03:14:02 UTC] Web server user: noah
+[13-May-2025 03:14:04 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 03:14:04 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 03:14:04 UTC] File exists: yes
+[13-May-2025 03:14:04 UTC] File readable: yes
+[13-May-2025 03:14:04 UTC] File permissions: 0644
+[13-May-2025 03:14:04 UTC] Current user: noah
+[13-May-2025 03:14:04 UTC] Process user: noah
+[13-May-2025 03:14:04 UTC] PHP process user: noah
+[13-May-2025 03:14:04 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 03:14:05 UTC] Web server user: noah
+[13-May-2025 03:15:51 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 03:15:51 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 03:15:51 UTC] File exists: yes
+[13-May-2025 03:15:51 UTC] File readable: yes
+[13-May-2025 03:15:51 UTC] File permissions: 0644
+[13-May-2025 03:15:51 UTC] Current user: noah
+[13-May-2025 03:15:51 UTC] Process user: noah
+[13-May-2025 03:15:51 UTC] PHP process user: noah
+[13-May-2025 03:15:52 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 03:15:52 UTC] Web server user: noah
+[13-May-2025 03:15:54 UTC] Current directory: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src
+[13-May-2025 03:15:54 UTC] Looking for .env file at: /Applications/MAMP/htdocs/ai-projects-sk00p/sk00p-image-analyzer/src/.env
+[13-May-2025 03:15:54 UTC] File exists: yes
+[13-May-2025 03:15:54 UTC] File readable: yes
+[13-May-2025 03:15:54 UTC] File permissions: 0644
+[13-May-2025 03:15:54 UTC] Current user: noah
+[13-May-2025 03:15:54 UTC] Process user: noah
+[13-May-2025 03:15:54 UTC] PHP process user: noah
+[13-May-2025 03:15:54 UTC] PHP process group: staff everyone localaccounts _appserverusr admin _appserveradm _lpadmin _appstore _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh com.apple.access_remote_ae
+[13-May-2025 03:15:54 UTC] Web server user: noah

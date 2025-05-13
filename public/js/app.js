@@ -55,8 +55,8 @@ function renderDemoThumbs() {
 	if (!container) return;
 	demoSamples.forEach((s, idx) => {
 		const btn = document.createElement("button");
-		btn.className = "rounded overflow-hidden shadow hover:shadow-lg transition";
-		btn.innerHTML = `<img src="${s.url}" alt="sample ${idx + 1}" class="w-full h-full object-cover" />`;
+		btn.className = "relative rounded overflow-hidden shadow hover:shadow-lg transition";
+		btn.innerHTML = `<img src=\"${s.url}\" alt=\"sample ${idx + 1}\" class=\"w-full h-full object-cover\" />\n                      <span class=\"absolute inset-0 flex items-center justify-center bg-black/40 text-white text-xs uppercase tracking-wide\">Click to try</span>`;
 		btn.addEventListener("click", () => runDemo(idx));
 		container.appendChild(btn);
 	});
@@ -418,11 +418,18 @@ function initTabSwitcher() {
 	function renderLibrary(data) {
 		const grid = document.getElementById("library-grid");
 		grid.innerHTML = "";
+		const emptyEl = document.getElementById("library-empty");
 		data.images.forEach((img) => {
 			const div = document.createElement("div");
 			div.innerHTML = `<img src="${img.thumb}" alt="thumb" class="w-full h-auto rounded shadow" loading="lazy" />`;
 			grid.appendChild(div);
 		});
+
+		if (data.images.length === 0) {
+			emptyEl.classList.remove("hidden");
+		} else {
+			emptyEl.classList.add("hidden");
+		}
 
 		// filters
 		const filterWrap = document.getElementById("library-filters");
@@ -441,7 +448,8 @@ function initTabSwitcher() {
 
 		// pagination
 		const pag = document.getElementById("library-pagination");
-		pag.innerHTML = `Page ${data.page} / ${data.totalPages}`;
+		pag.innerHTML = data.totalPages > 1 ? `Page ${data.page} / ${data.totalPages}` : "";
+
 		// next prev
 		const prev = document.createElement("button");
 		prev.textContent = "← Prev";

@@ -4,6 +4,11 @@ $projectRoot = __DIR__ . '/../';
 require_once $projectRoot . 'require_tools.php';
 
 use Sk00p\UI;
+use Sk00p\User;
+use Sk00p\Config;
+
+$user = User::current();
+$baseUrl = Config::env('BASE_URL', 'https://sk00p.com');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,8 +94,8 @@ use Sk00p\UI;
             class="w-full px-6 py-10 bg-white border rounded-xl shadow-md max-w-4xl mx-auto hidden">
             <div class="max-w-4xl mx-auto text-center mb-6">
                 <h2 class="text-2xl font-bold mb-3">Try a quick demo &mdash; no login required</h2>
-                <p class="text-gray-600">Choose one of the images below and we'll <em>simulate</em> the analysis (no
-                    credits used).</p>
+                <p class="text-gray-600">Tap any sample image to see how the analyzer works &mdash; no credits used, no
+                    login required.</p>
             </div>
             <div class="max-w-4xl mx-auto grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] gap-4 mb-8"
                 id="demo-thumbs">
@@ -123,100 +128,108 @@ use Sk00p\UI;
                 <p class="text-gray-600">Upload any JPG/PNG up to 10&nbsp;MB and get AI-generated tags.&nbsp;<span
                         class="font-semibold text-pink-600">Cost: 1 credit</span></p>
             </div>
-            <!-- Wizard container -->
-            <div class="wizard space-y-6">
-                <div class="content-container">
-                    <!-- Step 1: Upload Image -->
-                    <div id="step1" class="step active">
-                        <div class="flex flex-wrap justify-between gap-3 p-4">
-                            <div class="w-full text-center mb-2">
-                                <h3 class="text-lg font-semibold">Step&nbsp;1 &mdash; Upload an image</h3>
-                                <p class="text-sm text-gray-500">JPG or PNG, up to 10&nbsp;MB</p>
+            <?php if (!$user): ?>
+                <div class="text-center py-10 text-gray-600">
+                    <p class="mb-4">Please log in to analyze your own images.</p>
+                    <a href="<?= htmlspecialchars($baseUrl) ?>/login.php"
+                        class="inline-block px-5 py-2 rounded-xl bg-[#FB2091] text-white font-semibold">Log in</a>
+                </div>
+            <?php else: ?>
+                <!-- Wizard container -->
+                <div class="wizard space-y-6">
+                    <div class="content-container">
+                        <!-- Step 1: Upload Image -->
+                        <div id="step1" class="step active">
+                            <div class="flex flex-wrap justify-between gap-3 p-4">
+                                <div class="w-full text-center mb-2">
+                                    <h3 class="text-lg font-semibold">Step&nbsp;1 &mdash; Upload an image</h3>
+                                    <p class="text-sm text-gray-500">JPG or PNG, up to 10&nbsp;MB</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex px-4 py-3 justify-center">
-                            <input type="file" id="imageUpload" accept="image/jpeg,image/png" class="hidden" />
-                            <button data-action="upload" class="button button-primary">
-                                <span class="truncate">Upload Photo</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Step 2: Review -->
-                    <div id="step2" class="step">
-                        <div class="flex flex-wrap justify-between gap-3 p-4">
-                            <div class="w-full text-center mb-2">
-                                <h3 class="text-lg font-semibold">Step&nbsp;2 &mdash; Review your image</h3>
-                                <p class="text-sm text-gray-500">Make sure it looks correct before continuing</p>
-                            </div>
-                        </div>
-                        <div class="flex w-full grow bg-white @container p-4">
-                            <div class="image-container">
-                                <img id="previewImage" class="image-preview" src="" alt="Image preview"
-                                    style="display: none" />
-                            </div>
-                        </div>
-                        <div class="flex px-4 py-3 justify-center gap-4">
-                            <button data-action="goToStep" data-step="1" class="button button-secondary">
-                                <span class="truncate">Upload Different Image</span>
-                            </button>
-                            <div class="flex flex-col items-center gap-1">
-                                <button data-action="analyze" class="button button-primary">
-                                    <span class="truncate">Analyze This Image</span>
+                            <div class="flex px-4 py-3 justify-center">
+                                <input type="file" id="imageUpload" accept="image/jpeg,image/png" class="hidden" />
+                                <button data-action="upload" class="button button-primary">
+                                    <span class="truncate">Upload Photo</span>
                                 </button>
-                                <span class="text-xs text-gray-500">Cost: 1 credit</span>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Step 3: Image Description -->
-                    <div id="step3" class="step">
-                        <div class="flex flex-wrap justify-between gap-3 p-4">
-                            <div class="w-full text-center mb-2">
-                                <h3 class="text-lg font-semibold">Step&nbsp;3 &mdash; Image analysis</h3>
+                        <!-- Step 2: Review -->
+                        <div id="step2" class="step">
+                            <div class="flex flex-wrap justify-between gap-3 p-4">
+                                <div class="w-full text-center mb-2">
+                                    <h3 class="text-lg font-semibold">Step&nbsp;2 &mdash; Review your image</h3>
+                                    <p class="text-sm text-gray-500">Make sure it looks correct before continuing</p>
+                                </div>
+                            </div>
+                            <div class="flex w-full grow bg-white @container p-4">
+                                <div class="image-container">
+                                    <img id="previewImage" class="image-preview" src="" alt="Image preview"
+                                        style="display: none" />
+                                </div>
+                            </div>
+                            <div class="flex px-4 py-3 justify-center gap-4">
+                                <button data-action="goToStep" data-step="1" class="button button-secondary">
+                                    <span class="truncate">Upload Different Image</span>
+                                </button>
+                                <div class="flex flex-col items-center gap-1">
+                                    <button data-action="analyze" class="button button-primary">
+                                        <span class="truncate">Analyze This Image</span>
+                                    </button>
+                                    <span class="text-xs text-gray-500">Cost: 1 credit</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="flex w-full grow bg-white @container p-4">
-                            <div class="image-container">
-                                <img id="analysisImage" class="image-preview" src="" alt="Analyzed image"
-                                    style="display: none" />
+
+                        <!-- Step 3: Image Description -->
+                        <div id="step3" class="step">
+                            <div class="flex flex-wrap justify-between gap-3 p-4">
+                                <div class="w-full text-center mb-2">
+                                    <h3 class="text-lg font-semibold">Step&nbsp;3 &mdash; Image analysis</h3>
+                                </div>
                             </div>
-                        </div>
-                        <div class="p-4">
-                            <p class="section-title">Description</p>
-                            <div class="flex items-center">
-                                <p id="imageDescription" class="description-text">Loading description</p>
-                                <span id="loading-dots" class="description-text"></span>
+                            <div class="flex w-full grow bg-white @container p-4">
+                                <div class="image-container">
+                                    <img id="analysisImage" class="image-preview" src="" alt="Analyzed image"
+                                        style="display: none" />
+                                </div>
                             </div>
-                            <div id="countdown-container" class="mt-2 text-sm text-gray-500 flex items-center"
-                                style="display: none">
-                                <span>Estimated time remaining: </span>
-                                <span id="countdown" class="font-bold ml-1">15</span>
-                                <span class="ml-1">seconds</span>
+                            <div class="p-4">
+                                <p class="section-title">Description</p>
+                                <div class="flex items-center">
+                                    <p id="imageDescription" class="description-text">Loading description</p>
+                                    <span id="loading-dots" class="description-text"></span>
+                                </div>
+                                <div id="countdown-container" class="mt-2 text-sm text-gray-500 flex items-center"
+                                    style="display: none">
+                                    <span>Estimated time remaining: </span>
+                                    <span id="countdown" class="font-bold ml-1">15</span>
+                                    <span class="ml-1">seconds</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="p-4">
-                            <p class="section-title">Tags</p>
-                            <div id="imageTags" class="flex flex-col gap-3"></div>
-                        </div>
-                        <div class="flex px-4 py-3 justify-center gap-4">
-                            <button data-action="goToStep" data-step="1" class="button button-primary">
-                                <span class="truncate">Analyze Another Image</span>
-                            </button>
-                            <a href="#library-section" data-key="library"
-                                class="inline-flex items-center gap-1 px-4 py-2 rounded-xl bg-[#FB2091] text-white text-sm font-semibold shadow hover:bg-pink-600 transition">
-                                <span>View your tag library</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <line x1="5" y1="12" x2="19" y2="12" />
-                                    <polyline points="12 5 19 12 12 19" />
-                                </svg>
-                            </a>
+                            <div class="p-4">
+                                <p class="section-title">Tags</p>
+                                <div id="imageTags" class="flex flex-col gap-3"></div>
+                            </div>
+                            <div class="flex px-4 py-3 justify-center gap-4">
+                                <button data-action="goToStep" data-step="1" class="button button-primary">
+                                    <span class="truncate">Analyze Another Image</span>
+                                </button>
+                                <a href="#library-section" data-key="library"
+                                    class="inline-flex items-center gap-1 px-4 py-2 rounded-xl bg-[#FB2091] text-white text-sm font-semibold shadow hover:bg-pink-600 transition">
+                                    <span>View your tag library</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12" />
+                                        <polyline points="12 5 19 12 12 19" />
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            <?php endif; ?>
         </section>
 
         <!-- Tag Library Section -->
@@ -231,26 +244,49 @@ use Sk00p\UI;
                     </div>
                 </div>
 
-                <!-- Tag filters injected here -->
-                <div id="library-filters" class="flex flex-wrap gap-2"></div>
+                <?php if (!$user): ?>
+                    <div class="text-center py-10 text-gray-600 w-full">
+                        <p class="mb-4">Log in to save your analyses and build a searchable tag library.</p>
+                        <a href="<?= htmlspecialchars($baseUrl) ?>/login.php"
+                            class="inline-block px-5 py-2 rounded-xl bg-[#FB2091] text-white font-semibold">Log in</a>
+                    </div>
+                <?php else: ?>
+                    <p class="text-gray-600 text-sm max-w-2xl">Browse every image you've analyzed so far. Use the tag pills
+                        or search box to filter. Export the current view as CSV/JSON to reuse metadata in your ad manager or
+                        any workflow.</p>
 
-                <!-- Search & sort -->
-                <div class="flex flex-wrap items-center gap-3 mb-4">
-                    <input id="library-search" type="text" placeholder="Search tags…"
-                        class="border rounded px-3 py-1 text-sm" />
-                    <select id="library-sort" class="border rounded px-2 py-1 text-sm">
-                        <option value="newest">Newest</option>
-                        <option value="oldest">Oldest</option>
-                        <option value="filename">Filename</option>
-                        <option value="tagcount">Most tags</option>
-                    </select>
-                </div>
+                    <!-- Tag filters injected here -->
+                    <div id="library-filters" class="flex flex-wrap gap-2"></div>
 
-                <!-- Grid -->
-                <div id="library-grid" class="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-3"></div>
+                    <!-- Search & sort -->
+                    <div class="flex flex-wrap items-center gap-3 mb-4">
+                        <input id="library-search" type="text" placeholder="Search tags…"
+                            class="border rounded px-3 py-1 text-sm" />
+                        <select id="library-sort" class="border rounded px-2 py-1 text-sm">
+                            <option value="newest">Newest</option>
+                            <option value="oldest">Oldest</option>
+                            <option value="filename">Filename</option>
+                            <option value="tagcount">Most tags</option>
+                        </select>
+                    </div>
 
-                <!-- Pagination -->
-                <div id="library-pagination" class="flex justify-between items-center text-sm mt-4"></div>
+                    <!-- Grid -->
+                    <div id="library-grid" class="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-3"></div>
+
+                    <!-- Empty state -->
+                    <div id="library-empty" class="flex flex-col items-center gap-4 py-10 text-gray-500 hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 16.5V8a5 5 0 015-5h8a5 5 0 015 5v8.5M3 16.5l3 3m0 0l3-3m-3 3V13m12 3.5l3 3m0 0l3-3m-3 3V13" />
+                        </svg>
+                        <p class="text-center max-w-xs">No analyzed images yet. Run an analysis in Step&nbsp;3 and return
+                            here to build your library.</p>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div id="library-pagination" class="flex justify-between items-center text-sm mt-4"></div>
+                <?php endif; ?>
             </div>
         </section>
     </div>

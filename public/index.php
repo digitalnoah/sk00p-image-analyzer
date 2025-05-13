@@ -11,8 +11,7 @@ use Sk00p\UI;
 <head>
     <meta charset="UTF-8" />
     <title>sk00p Image Analyzer</title>
-    <link rel="icon" type="image/png"
-        href="https://sc00p-v01.s3.us-east-1.amazonaws.com/uploads/favicon-staging-pink.png" />
+    <?php UI::favicon(); ?>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
         href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700;900" />

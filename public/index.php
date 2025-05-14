@@ -131,7 +131,7 @@ $baseUrl = Config::env('BASE_URL', 'https://sk00p.com');
             <?php if (!$user): ?>
                 <div class="text-center py-10 text-gray-600">
                     <p class="mb-4">Please log in to analyze your own images.</p>
-                    <a href="<?= htmlspecialchars($baseUrl) ?>/login.php"
+                    <a href="<?= htmlspecialchars($baseUrl) ?>/login.php?continue=<?= urlencode($_SERVER['REQUEST_URI']) ?>"
                         class="inline-block px-5 py-2 rounded-xl bg-[#FB2091] text-white font-semibold">Log in</a>
                 </div>
             <?php else: ?>
@@ -247,7 +247,7 @@ $baseUrl = Config::env('BASE_URL', 'https://sk00p.com');
                 <?php if (!$user): ?>
                     <div class="text-center py-10 text-gray-600 w-full">
                         <p class="mb-4">Log in to save your analyses and build a searchable tag library.</p>
-                        <a href="<?= htmlspecialchars($baseUrl) ?>/login.php"
+                        <a href="<?= htmlspecialchars($baseUrl) ?>/login.php?continue=<?= urlencode($_SERVER['REQUEST_URI']) ?>"
                             class="inline-block px-5 py-2 rounded-xl bg-[#FB2091] text-white font-semibold">Log in</a>
                     </div>
                 <?php else: ?>

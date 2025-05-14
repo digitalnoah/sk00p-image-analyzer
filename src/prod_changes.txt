@@ -1,6 +1,8 @@
 Update db project table:
 
-ALTER TABLE images ADD COLUMN thumb_url TEXT AFTER s3_url;
+ALTER TABLE images
+     ADD COLUMN thumb_url TEXT AFTER s3_url,
+     ADD COLUMN user_id INT DEFAULT 0 AFTER id;
 
 Add .env to root folder:
 PROJECT_DB_HOST=localhost

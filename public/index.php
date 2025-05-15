@@ -15,7 +15,7 @@ $baseUrl = Config::env('BASE_URL', 'https://sk00p.com');
 
 <head>
     <meta charset="UTF-8" />
-    <title>sk00p Image Analyzer</title>
+    <title>sk00p Tag Genius</title>
     <?php UI::favicon(); ?>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
@@ -29,7 +29,7 @@ $baseUrl = Config::env('BASE_URL', 'https://sk00p.com');
 
     <!-- Hero band -->
     <section class="text-center py-12 px-6 bg-gradient-to-b from-white to-gray-50">
-        <h1 class="text-3xl md:text-4xl font-extrabold mb-4">Image Analyzer</h1>
+        <h1 class="text-3xl md:text-4xl font-extrabold mb-4">Tag Genius</h1>
         <p class="text-gray-600 max-w-xl mx-auto mb-6">Turn any image into rich, searchable metadata in seconds.</p>
     </section>
 
@@ -55,8 +55,8 @@ $baseUrl = Config::env('BASE_URL', 'https://sk00p.com');
         <!-- Example Section -->
         <section id="how-section" class="w-full px-6 py-10 bg-white border rounded-xl shadow-md max-w-4xl mx-auto">
             <div class="max-w-4xl mx-auto text-center mb-6">
-                <h2 class="text-2xl font-bold mb-3">How Image Analyzer works</h2>
-                <p class="text-gray-600">Below is an example of Image Analyzer in action. We analyzed a sample image and
+                <h2 class="text-2xl font-bold mb-3">How Tag Genius works</h2>
+                <p class="text-gray-600">Below is an example of Tag Genius in action. We analyzed a sample image and
                     generated descriptive tags.</p>
             </div>
             <div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-6 items-start justify-center">
@@ -130,9 +130,14 @@ $baseUrl = Config::env('BASE_URL', 'https://sk00p.com');
             </div>
             <?php if (!$user): ?>
                 <div class="text-center py-10 text-gray-600">
-                    <p class="mb-4">Please log in to analyze your own images.</p>
-                    <a href="<?= htmlspecialchars($baseUrl) ?>/login.php?continue=<?= urlencode($_SERVER['REQUEST_URI']) ?>"
-                        class="inline-block px-5 py-2 rounded-xl bg-[#FB2091] text-white font-semibold">Log in</a>
+                    <p class="mb-2">Log in or create a free account to analyze your images.<br><span
+                            class="font-semibold text-pink-600">New members receive 15 free credits!</span></p>
+                    <div class="flex justify-center gap-4">
+                        <a href="<?= htmlspecialchars($baseUrl) ?>/login.php?continue=<?= urlencode($_SERVER['REQUEST_URI']) ?>"
+                            class="px-5 py-2 rounded-xl bg-[#FB2091] text-white font-semibold">Log&nbsp;in</a>
+                        <a href="<?= htmlspecialchars($baseUrl) ?>/login.php?continue=<?= urlencode($_SERVER['REQUEST_URI']) ?>"
+                            class="px-5 py-2 rounded-xl border-2 border-[#FB2091] text-[#FB2091] font-semibold bg-white">Join&nbsp;Free</a>
+                    </div>
                 </div>
             <?php else: ?>
                 <!-- Wizard container -->
@@ -245,10 +250,16 @@ $baseUrl = Config::env('BASE_URL', 'https://sk00p.com');
                 </div>
 
                 <?php if (!$user): ?>
-                    <div class="text-center py-10 text-gray-600 w-full">
-                        <p class="mb-4">Log in to save your analyses and build a searchable tag library.</p>
-                        <a href="<?= htmlspecialchars($baseUrl) ?>/login.php?continue=<?= urlencode($_SERVER['REQUEST_URI']) ?>"
-                            class="inline-block px-5 py-2 rounded-xl bg-[#FB2091] text-white font-semibold">Log in</a>
+                    <div class="text-center py-10 text-gray-600 w-full space-y-4">
+                        <p class="mb-2">Log in or create a free account to save analyses and build your tag
+                            library.<br><span class="font-semibold text-pink-600">New members receive 15 free
+                                credits!</span></p>
+                        <div class="flex justify-center gap-4">
+                            <a href="<?= htmlspecialchars($baseUrl) ?>/login.php?continue=<?= urlencode($_SERVER['REQUEST_URI']) ?>"
+                                class="px-5 py-2 rounded-xl bg-[#FB2091] text-white font-semibold">Log&nbsp;in</a>
+                            <a href="<?= htmlspecialchars($baseUrl) ?>/login.php?continue=<?= urlencode($_SERVER['REQUEST_URI']) ?>"
+                                class="px-5 py-2 rounded-xl border-2 border-[#FB2091] text-[#FB2091] font-semibold bg-white">Join&nbsp;Free</a>
+                        </div>
                     </div>
                 <?php else: ?>
                     <p class="text-gray-600 text-sm max-w-2xl">Browse every image you've analyzed so far. Use the tag pills
